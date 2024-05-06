@@ -1,10 +1,14 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
+@import '../styles/design/breakpoints';
 @import '../styles/design/button-style';
 @import '../styles/design/banner-text';
-@import '../styles/design/top-banner-footer';
+@import '../styles/design/style-button';
+@import '../styles/design/custom-pagination_swipper';
+@import "../styles/design/detail-page";
+@import "../styles/design/button-player";
+@import "../styles/design/loading-data";
 
 @layer base {
   :root {
@@ -15,14 +19,14 @@
     --white: #fff;
     --text-dark: #000;
     --text-gray-light: rgb(191 191 177 / 1);
-    --color-1: #f4e205;
-    --color-2: #a555e6;
+    --color-1: #7e22ce;
+    --color-2: #fbbf24;
     --color-3: rgb(57 54 50 / 1);
     --color-4: rgb(191 191 177 / 1);
     --color-5: #ff5252;
     --color-6: rgb(8 8 7 / 1);
     --color-rgba-1: rgba(85, 87, 255, 0.78),
-    --color-rgba-2: rgba(0,0,0,0.4),
+      --color-rgba-2: rgba(0, 0, 0, 0.4),
       --bg-linear: linear-gradient(135deg, var(--color-1) 0%, var(--color-rgba-1) 100%);
     --background: 0 0% 100%;
     --foreground: 0 0% 3.9%;
@@ -116,6 +120,12 @@
 
 @layer utilities {
 
+  // html.dark {
+  //   body {
+  //     @apply background:radial-gradient(125%_125%_at_50%_10%, #020130_40%, #0e0548_100%);
+  //   }
+  // }
+
   /* ===== TYPOGRAPHY */
   /* 44 */
   .h1-semibold {
@@ -182,17 +192,18 @@
       transition: 0.3s;
       position: relative;
       cursor: pointer;
-       svg {
-          fill: var(--white);
-          height: auto !important;
-        
-        }
+
+      svg {
+        fill: var(--white);
+        height: auto !important;
+
+      }
 
 
       &.active-menu {
         color: var(--color-1);
 
-       
+
         &::after {
           opacity: 1;
           width: 80%;
@@ -227,9 +238,26 @@
     }
   }
 
-  .bg-color-rgba-1 {
-    background-color: rgba(0,0,0,0.6);
+  .menucontent-mobile{
+    .list-menu_nav__item{
+      .nav-mobile_item{
+        
+        border: none;
+        svg {
+          fill: unset;
+        }
+      }
+       button {
+        padding: 0px;
+        text-decoration: none;
+       }
+    }
   }
+
+  .bg-color-rgba-1 {
+    background-color: rgba(0, 0, 0, 0.6);
+  }
+
   // ================|| TYTLE BLOCKS STYLE ||====================//
   .title-block_style {
     border-radius: .25rem;
@@ -246,7 +274,7 @@
     line-height: 1;
     letter-spacing: 1.2px;
     transition: .2s .1s;
-    background-image: linear-gradient(90deg, var(--color-1), var(--clr));
+    background-image: linear-gradient(90deg, var(--color-2), var(--clr));
     border: 0 solid;
     overflow: hidden;
     display: flex;
@@ -261,4 +289,19 @@
       padding-left: 30px;
     }
   }
+
+  .SliderBannerEffect {
+    .swiper-slide {
+      width: 40% ;
+
+      .title-block_style{
+        width: 100%;
+      }
+      @include downLg {
+        width: 60%;
+      }
+     
+    }
+  }
+
 }

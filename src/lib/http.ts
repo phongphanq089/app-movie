@@ -1,4 +1,5 @@
 import envConfig from '@/config'
+import { redirect } from 'next/navigation'
 
 type CustomOptions = Omit<RequestInit, 'method'> & {
   baseUrl?: string | undefined
@@ -52,7 +53,8 @@ const request = async <Response>(
   }
 
   if (!res.ok) {
-    throw new HttpError(data)
+    redirect('/not-found')
+    // throw new HttpError(data)
   }
 
   return data

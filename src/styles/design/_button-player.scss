@@ -1,0 +1,80 @@
+.playBtn {
+  width: 60px;
+  height: 60px;
+  background-color: var(--color-2);
+  border-radius: 100%;
+  border: #fff solid 2px;
+  position: relative;
+  animation: shadowPulse 1s infinite linear;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  svg {
+    fill: var(--white);
+    font-size: 18px;
+  }
+}
+.playBtn::after {
+  position: absolute;
+  content: '';
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border: #fff solid 2px;
+  border-radius: 100%;
+  animation: ringPulse1 1s infinite linear;
+}
+
+@keyframes ringPulse1 {
+  0% {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+
+  10% {
+    opacity: 1;
+  }
+
+  80%,
+  100% {
+    opacity: 0;
+    transform: scale(2);
+  }
+}
+@keyframes ringPulse2 {
+  0% {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+
+  10% {
+    opacity: 1;
+  }
+
+  80%,
+  100% {
+    opacity: 0;
+    transform: scale(1.5);
+  }
+}
+
+@keyframes shadowPulse {
+  0% {
+    box-shadow: 0 0 8px 6px transparent, 0 0 0 0 transparent,
+      0 0 0 0 transparent;
+  }
+
+  10% {
+    box-shadow: 0 0 8px 6px var(--color-2), 0 0 12px 10px transparent,
+      0 0 12px 5px var(--color-2);
+  }
+
+  80%,
+  100% {
+    box-shadow: 0 0 8px 6px transparent, 0 0 0 40px transparent,
+      0 0 0 40px transparent;
+  }
+}

@@ -1,117 +1,32 @@
 export const menuNavbar = [
   {
-    title: 'Trang Chủ',
+    name: 'Trang Chủ',
     link: '/',
   },
   {
-    title: 'Phim Lẻ',
-    link: '/movie-single',
+    name: 'Phim Lẻ',
+    link: '/list-movies/phim-le',
   },
   {
-    title: 'Phim Bộ',
-    link: '/movie-series',
+    name: 'Phim Bộ',
+    link: '/list-movies/phim-bo',
   },
   {
-    title: 'TV-Show',
-    link: '/tv-show',
+    name: 'TV-Show',
+    link: '/list-movies/tv-shows',
   },
   {
-    title: 'Thể Loại',
-    link: '#',
-    children: [
-      {
-        title: 'Hành Động',
-        link: '#',
-      },
-      {
-        title: 'Kinh Dị',
-        link: '#',
-      },
-      {
-        title: 'Cổ Trang',
-        link: '#',
-      },
-      {
-        title: 'Chiến Tranh',
-        link: '#',
-      },
-      {
-        title: 'Tình Cảm',
-        link: '#',
-      },
-      {
-        title: 'Tình Cảm',
-        link: '#',
-      },
-      {
-        title: 'Tài Liệu',
-        link: '#',
-      },
-      {
-        title: 'Bí Ẩn',
-        link: '#',
-      },
-      {
-        title: 'Tâm LÝ',
-        link: '#',
-      },
-      {
-        title: 'Thể Thao',
-        link: '#',
-      },
-      {
-        title: 'Phưu Lưu',
-        link: '#',
-      },
-      {
-        title: 'Âm Nhạc',
-        link: '#',
-      },
-      {
-        title: 'Gia Đình',
-        link: '#',
-      },
-      {
-        title: 'Học Đường',
-        link: '#',
-      },
-      {
-        title: 'Hài Hước',
-        link: '#',
-      },
-      {
-        title: 'Hình Sự',
-        link: '#',
-      },
-      {
-        title: 'Võ Thuật',
-        link: '#',
-      },
-      {
-        title: 'Khoa Học',
-        link: '#',
-      },
-      {
-        title: 'Thần Thoại',
-        link: '#',
-      },
-      {
-        title: 'Chính Kịch',
-        link: '#',
-      },
-      {
-        title: 'Kinh Điển',
-        link: '#',
-      },
-    ],
-  },
-  {
-    title: 'Quốc Gia',
+    name: 'Phim Yêu Thích',
     link: '#',
   },
-
   {
-    title: 'Phim Yêu Thích',
+    name: 'Thể Loại',
     link: '#',
+    children: [],
+  },
+  {
+    name: 'Quốc Gia',
+    link: '#',
+    children: [],
   },
 ]

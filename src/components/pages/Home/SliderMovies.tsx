@@ -3,6 +3,7 @@ import TitleBlock from '@/components/design-ui/TitleBlock'
 import CardMovie from '@/components/shared/CardMovied'
 import { movieSingleResType } from '@/lib/schemaType'
 import React from 'react'
+import { Pagination } from 'swiper/modules'
 import { Swiper, SwiperSlide } from 'swiper/react'
 
 interface propsType {
@@ -12,12 +13,18 @@ interface propsType {
 const SliderMovies = ({ dat_list }: propsType) => {
   return (
     <div className='slider-container mb-10'>
-      <TitleBlock text={dat_list.data.titlePage} />
+      <TitleBlock
+        text={dat_list.data.titlePage}
+        className='text-[12px] lg:text-lg'
+      />
       <Swiper
         slidesPerView={2}
-        onSlideChange={() => console.log('slide change')}
-        onSwiper={(swiper) => console.log(swiper)}
         spaceBetween={20}
+        pagination={{
+          clickable: true,
+        }}
+        modules={[Pagination]}
+        className='pb-[80px]'
         breakpoints={{
           540: {
             slidesPerView: 3,
@@ -36,7 +43,7 @@ const SliderMovies = ({ dat_list }: propsType) => {
         {dat_list.data?.items.map((item, index) => {
           return (
             <SwiperSlide key={index}>
-              <CardMovie poster_url={item.poster_url} name={item.name} />
+              <CardMovie dataItem={item} />
             </SwiperSlide>
           )
         })}

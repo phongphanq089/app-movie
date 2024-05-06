@@ -25,6 +25,8 @@ export const NextImageResize = ({
         priority={priority}
         className={`h-auto object-cover`}
         sizes='(min-width: 1200px) 200vw, (max-width: 1200px) 60vw, 40vw'
+        placeholder='blur'
+        blurDataURL={src}
       />
     </div>
   )

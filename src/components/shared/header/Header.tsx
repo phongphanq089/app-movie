@@ -3,26 +3,33 @@ import WrapperContainer from '../../layout/WrapperContainer'
 import { menuNavbar } from '@/data/Navbar'
 import NavItem from './NavItem'
 import LogoMovie from '../Logo'
-import { Button } from '@/components/ui/button'
-import SvgIcon from '@/components/ui/SvgIcon'
+import movieApiRequest from '@/api-request'
+import SearchMovies from '../SearchMovies'
 
-const Header = () => {
+const Header = async () => {
+  const listCategorieds = await movieApiRequest.menuCategory('/the-loai')
+  const listNationCategory = await movieApiRequest.nationCategoryMenu(
+    '/quoc-gia'
+  )
   return (
-    <header className='py-3 mb-5'>
-      <WrapperContainer>
-        <nav className='flex items-center w-full justify-between'>
-          <LogoMovie />
-          <div className='flex items-center gap-5'>
-            <NavItem menuNavbar={menuNavbar} />
-            <span className='block xl:hidden'>
-              <SvgIcon icon='menu' className='w-[35px] h-auto' />
-            </span>
-
-            <Button variant={'stylePage'}>Login</Button>
-          </div>
-        </nav>
-      </WrapperContainer>
-    </header>
+    <>
+      <header className='mb-[100px] py-3'>
+        <WrapperContainer>
+          <nav className='flex container-3xl items-center justify-between fixed w-full top-1 z-[20] py-3 px-4 left-1/2 translate-x-[-50%] dark:[background:radial-gradient(125%_125%_at_50%_10%,#020130_40%,#0e0548_100%)] bg-light border rounded-full'>
+            <LogoMovie />
+            <div className='flex flex-row-reverse xl:flex-row items-center gap-2 xl:gap-5'>
+              {/* <ModeToggle /> */}
+              <NavItem
+                menuNavbar={menuNavbar}
+                listNationCategory={listNationCategory.payload}
+                listCategorieds={listCategorieds.payload}
+              />
+              <SearchMovies />
+            </div>
+          </nav>
+        </WrapperContainer>
+      </header>
+    </>
   )
 }
 

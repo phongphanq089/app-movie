@@ -1,0 +1,94 @@
+.page-detail_movie {
+  .video-player-iframe {
+    width: 100%;
+    height: 100%;
+  }
+
+  .heroBanner {
+    width: 100%;
+    height: 600px;
+    background-color: #020130;
+    display: flex;
+    align-items: center;
+    position: relative;
+
+    .backdrop-img {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      opacity: 0.4;
+      overflow: hidden;
+      .lazy-load-image-background {
+        width: 100%;
+        height: 100%;
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          object-position: center;
+        }
+      }
+    }
+    .opacity-layer {
+      width: 100%;
+      height: 250px;
+      background: linear-gradient(
+        180deg,
+        rgba(4, 21, 45, 0) 0%,
+        #020130 79.17%
+      );
+      position: absolute;
+      bottom: 0;
+      left: 0;
+    }
+  }
+}
+
+.wrapImgResize {
+  overflow: hidden;
+  position: relative;
+  display: block;
+
+  video,
+  iframe,
+  img {
+    object-fit: cover;
+    width: 101%;
+    height: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    min-height: 101%;
+    max-height: 101%;
+  }
+
+  &.img16And9 {
+    padding-top: 56.25%;
+  }
+
+  &.imgSquare {
+    padding-top: 100%;
+  }
+
+  &.imgSquare2 {
+    padding-top: 130%;
+  }
+
+  &.img9And16 {
+    padding-top: 177%;
+  }
+
+  &.img3And4 {
+    padding-top: 133.33333333%;
+  }
+  &.img3And2 {
+    padding-top: 66.67%;
+  }
+
+  &.imgSpecial1 {
+    padding-top: 75.46%;
+  }
+}
